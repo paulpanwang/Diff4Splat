@@ -5,10 +5,10 @@
 [Panwang Pan<sup>†</sup>](https://paulpanwang.github.io), [Chenguo Lin<sup>†</sup>](https://chenguolin.github.io), [Jingjing Zhao](), [Chenxin Li](), [Yuchen Lin](https://wgsxm.github.io), [Haopeng Li](), [Honglei Yan](https://openreview.net/profile?id=~Honglei_Yan1), [Kairun Wen](), [Yunlong Lin](), [Yixuan Yuan](), [Yadong Mu](http://www.muyadong.com)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2511.00503-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2511.00503)
-[![Project Page](https://img.shields.io/badge/🏠-Project%20Page-blue.svg)](https://diff4splat.github.io)
-[<img src="https://img.shields.io/badge/YouTube-Video-red" alt="YouTube">](https://www.youtube.com/watch?v=)
-[![Model](https://img.shields.io/badge/🤗%20Model-Diff4Splat-yellow.svg)](https://huggingface.co/diff4splat)
-[![Demo](https://img.shields.io/badge/🤗%20Demo-Diff4Splat-green.svg)](https://huggingface.co/spaces/diff4splat/demo)
+[![Project Page](https://img.shields.io/badge/🏠-Project%20Page-blue.svg)](https://paulpanwang.github.io/Diff4Splat/)
+[<img src="https://img.shields.io/badge/YouTube-Video-red" alt="YouTube">](https://paulpanwang.github.io/Diff4Splat/)
+[![Model](https://img.shields.io/badge/🤗%20Model-Diff4Splat-yellow.svg)](https://paulpanwang.github.io/Diff4Splat/)
+[![Demo](https://img.shields.io/badge/🤗%20Demo-Diff4Splat-green.svg)](https://paulpanwang.github.io/Diff4Splat/)
 
 <p align="center">
     <img width="90%" alt="teaser" src="./assets/teaser.png">
