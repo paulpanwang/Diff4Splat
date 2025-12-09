@@ -1,4 +1,4 @@
-# [arXiv 2025] Diff4Splat: Controllable 4D Scene Generation with Latent Dynamic Reconstruction Models
+# Diff4Splat: Controllable 4D Scene Generation with Latent Dynamic Reconstruction Models
 
 <h4 align="center">
 
