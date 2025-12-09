@@ -21,7 +21,7 @@ Diff4Splat is a feed-forward method that synthesizes controllable and explicit 4
 
 Given a single input image, a camera trajectory, and an optional text prompt, Diff4Splat directly predicts a deformable 3D Gaussian field that encodes appearance, geometry, and motion, all in a single forward pass, without test-time optimization or post-hoc refinement.
 
-Here is our [Project Page](https://diff4splat.github.io).
+Here is our [Project Page](https://paulpanwang.github.io/Diff4Splat/).
 
 Feel free to contact us or open an issue if you have any questions or suggestions.
 
