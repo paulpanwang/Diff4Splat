@@ -25,8 +25,7 @@ Given a single input image, a camera trajectory, and an optional text prompt, Di
 
 Here is our [Project Page](https://paulpanwang.github.io/Diff4Splat/).
 
-Feel free to contact us or open an issue if you have any questions or suggestions.
-
+Feel free to contact us or open an issue if you have any questions or suggestions. 
 ## 📢 News
 - **2025-11-01**: Diff4Splat is released on arXiv.
 - **2025-10-15**: Initial codebase structure established.
