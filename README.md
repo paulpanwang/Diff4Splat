@@ -32,7 +32,6 @@ Feel free to contact us or open an issue if you have any questions or suggestion
 ## 🔥 See Also
 You may also be interested in our other works:
 - [**[CVPR 2026] MoVieS**](https://github.com/chenguolin/MoVieS): a feed-forward model for 4D dynamic reconstruction from monocular videos.
-- [**LRDM**](https://github.com/chenguolin/LRDM): Motion-Aware 4D Dynamic View Synthesis in One Second
 
 ## 📢 News
 - **2026-02-21**: The paper is accepted to CVPR 2026.
