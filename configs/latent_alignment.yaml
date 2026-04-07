@@ -1,0 +1,44 @@
+opt_type: "tinyvae_align_wan21"
+
+# Alignment specific configs
+wan21_vae_path: "./resources/ckpts/Wan2.1-I2V-14B-480P-Diffusers/vae_step_411000.pth"
+tinyvae_ckpt_path: null  # set to path if starting from pretrained TinyVAE
+use_denorm: true         # undo Wan's mean/std normalization before Tiny decoder
+use_alignment_net: true  # use residual 1x1 conv for distribution alignment
+
+# Loss weights
+latent_align_weight: 1.0
+pixel_recon_weight: 1.0
+lpips_weight: 0.5
+
+optimizer:
+  name: "adamw"
+  lr: 0.0001
+  betas:
+    - 0.9
+    - 0.95
+  weight_decay: 0.01
+
+lr_scheduler:
+  name: "cosine_warmup"
+  num_warmup_steps: 500
+
+train:
+  batch_size_per_gpu: 4
+  gradient_accumulation_steps: 4
+  use_deepspeed: false
+  zero_stage: 2
+  epochs: 10
+  log_freq: 10
+  eval_freq: 500
+  save_freq: 1000
+  eval_freq_epoch: 1
+  save_freq_epoch: 2
+  ema_kwargs:
+    decay: 0.9999
+    use_ema_warmup: true
+    inv_gamma: 1.
+    power: 0.75
+
+val:
+  batch_size_per_gpu: 1
