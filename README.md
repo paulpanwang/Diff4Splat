@@ -144,7 +144,7 @@ Download from HuggingFace and place in `resources/ckpts/` directory:
 pip install huggingface-hub
 python -c "
 from huggingface_hub import hf_hub_download
-hf_hub_download(repo_id='chenguolin/LRDM', filename='lrdm_ckpt.safetensors', local_dir='./resources/ckpts')
+hf_hub_download(repo_id='paulpanwang/LRDM', filename='lrdm_ckpt.safetensors', local_dir='./resources/ckpts')
 "
 ```
 
