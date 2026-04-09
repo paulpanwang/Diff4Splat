@@ -1,4 +1,4 @@
-<span style="color: red;">⚠️ Note: This repository currently contains only the base code. Full code and pretrained weights will be updated soon.</span>
+<span style="color: red; font-weight: bold;">⚠️ Note: This repository currently contains only the base code. Full code and pretrained weights will be updated soon.</span>
 
 # [CVPR 2026] 🌀Diff4Splat
 
