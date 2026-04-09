@@ -45,7 +45,7 @@ This section clarifies the differences between the paper description and the cur
 ### What the Paper Describes
 - **Video Backbone**: CogVideoX-style Video DiT with 32-channel 3D Causal VAE (4×8×8 compression)
 - **LDRM Input**: Video latent tensor (z) from the diffusion model, together with camera information, processed by LDRM Transformer to output deformable 3D Gaussians
-- **Training**: Flow Matching on latent sequences jointly with photometric/geometric/motion objectives
+
 
 
 ### Release Roadmap
