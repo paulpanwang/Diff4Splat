@@ -112,47 +112,7 @@ print('All imports successful!')
 "
 ```
 
-## 💾 Download Checkpoints
 
-All checkpoints should be placed in the `resources/ckpts/` directory.
-
-### 1. Wan Camera Control Model (Step 1)
-
-Contact the authors for access to the camera control checkpoint, or check our HuggingFace page for updates.
-
-Once downloaded, place the checkpoint in `resources/ckpts/` directory.
-
-### 2. Wan Base Model (VAE and Text Encoder)
-
-The code will attempt to download Wan2.2-TI2V-5B base model automatically from ModelScope/HuggingFace.
-If automatic download fails, you can manually download from:
-- ModelScope: `Wan-AI/Wan2.2-TI2V-5B`
-- Or contact the authors for the base model weights.
-
-Default paths (can be modified in `src/options.py`):
-```python
-wan_dir: str = "./resources/ckpts/Wan2.2-TI2V-5B"
-vae_path: str = "./resources/ckpts/Wan2.2-TI2V-5B/Wan2.2_VAE.pth"
-```
-
-### 3. LRDM Model (Step 2 & 3)
-
-Download from HuggingFace and place in `resources/ckpts/` directory:
-```bash
-# Using huggingface-hub
-pip install huggingface-hub
-python -c "
-from huggingface_hub import hf_hub_download
-hf_hub_download(repo_id='paulpanwang/LRDM', filename='lrdm_ckpt.safetensors', local_dir='./resources/ckpts')
-"
-```
-
-LRDM checkpoints will be released on HuggingFace. Stay tuned for updates.
-
-Default path in `src/options.py`:
-```python
-pretrained_path: str = "./resources/ckpts/lrdm_ckpt.safetensors"
-```
 
 ## 📊 Datasets
 
