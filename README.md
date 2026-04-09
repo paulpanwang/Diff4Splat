@@ -1,6 +1,6 @@
 # [CVPR 2026] 🌀Diff4Splat
 
-⚠️ **Code is currently being uploaded** - Please check back later for the complete repository.
+This is the official code repository for **Diff4Splat: Controllable 4D Scene Generation with Latent Dynamic Reconstruction Models** (CVPR 2026).
 
 <h2 align="center"> <a href="https://paulpanwang.github.io/Diff4Splat">Diff4Splat: Controllable 4D Scene Generation with <br> Latent Dynamic Reconstruction Models</a></h2>
 
@@ -39,12 +39,12 @@ You may also be interested in our other works:
 - **2025-10-15**: Initial codebase structure established.
 - **2025-10-01**: Project development started.
 
-## 📋 TODO
-- [x] Release inference scripts.
-- [x] Release training code and data preprocessing scripts.
-- [ ] Release pretrained checkpoints.
-- [ ] Provide a HuggingFace🤗 demo.
-- [ ] Release preprocessed dataset.
+## 📋 Project Status
+- [x] Inference code released
+- [x] Training code and data preprocessing scripts released
+- [ ] Pretrained checkpoints (coming soon)
+- [ ] HuggingFace demo (coming soon)
+- [ ] Preprocessed dataset (coming soon)
 
 ## 🔧 Installation
 

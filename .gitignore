@@ -11,5 +11,11 @@ temp*.*
 *.so
 *.tar*
 *.vsix
-resources
+wandb/
+*.safetensors
+*.pth
+*.pt
+*.bin
+*.npy
 resources/
+
