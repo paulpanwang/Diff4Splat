@@ -1,3 +1,5 @@
+<span style="color: red;">⚠️ 我们只上传了基础的代码,后续会继续更新代码和权重</span>
+
 # [CVPR 2026] 🌀Diff4Splat
 
 <h2 align="center"> <a href="https://paulpanwang.github.io/Diff4Splat">Diff4Splat: Controllable 4D Scene Generation with <br> Latent Dynamic Reconstruction Models</a></h2>
