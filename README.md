@@ -241,11 +241,6 @@ This section clarifies the differences between the paper description and the cur
 - **LDRM Input**: Video latent tensor (z) from the diffusion model, together with camera information, processed by LDRM Transformer to output deformable 3D Gaussians
 - **Training**: Flow Matching on latent sequences jointly with photometric/geometric/motion objectives
 
-### What This Repository Contains
-- **Video Backbone**: Wan 2.2 TI2V (a practical engineering alternative to CogVideoX)
-- **LRDM/VGGSplaT**: Takes multi-frame RGB images + poses + intrinsics as input, uses VGGT-1B derived encoder/aggregator and DPT/linear heads (see `src/models/networks/vggsplat.py` and `src/models/lrdm.py`)
-- **TinyVAE / Latent Alignment**: A separate training path (`latent_alignment.py`) that is not yet integrated into the main NVS inference pipeline
-- **Note**: "LRDM" in this repo is the same as "LDRM" in the paper (a minor naming typo)
 
 ### Release Roadmap
 We are actively working on:
@@ -291,13 +286,13 @@ Diff4Splat demonstrates state-of-the-art performance across multiple tasks:
 
 ### Phase 1: Codebase Release (Current)
 - [x] Repository setup and documentation
-- [x] Inference code release
-- [x] Training scripts
+- [] Inference code release
+- [] Training scripts
 - [ ] Pretrained model weights
 
 ### Phase 2: Full Implementation
-- [x] Training code release
-- [x] Dataset preprocessing scripts
+- [] Training code release
+- [] Dataset preprocessing scripts
 - [ ] Comprehensive evaluation benchmarks
 
 ### Phase 3: Extended Features
