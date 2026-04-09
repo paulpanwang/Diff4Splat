@@ -232,6 +232,30 @@ python tests/test_latent_alignment.py
 
 See [tests/README.md](tests/README.md) for more details.
 
+## 📝 Paper vs Released Code
+
+This section clarifies the differences between the paper description and the current released codebase, to help set expectations for reproducibility.
+
+### What the Paper Describes
+- **Video Backbone**: CogVideoX-style Video DiT with 32-channel 3D Causal VAE (4×8×8 compression)
+- **LDRM Input**: Video latent tensor (z) from the diffusion model, together with camera information, processed by LDRM Transformer to output deformable 3D Gaussians
+- **Training**: Flow Matching on latent sequences jointly with photometric/geometric/motion objectives
+
+### What This Repository Contains
+- **Video Backbone**: Wan 2.2 TI2V (a practical engineering alternative to CogVideoX)
+- **LRDM/VGGSplaT**: Takes multi-frame RGB images + poses + intrinsics as input, uses VGGT-1B derived encoder/aggregator and DPT/linear heads (see `src/models/networks/vggsplat.py` and `src/models/lrdm.py`)
+- **TinyVAE / Latent Alignment**: A separate training path (`latent_alignment.py`) that is not yet integrated into the main NVS inference pipeline
+- **Note**: "LRDM" in this repo is the same as "LDRM" in the paper (a minor naming typo)
+
+### Release Roadmap
+We are actively working on:
+1. **Paper-faithful implementation**: A version closer to the CogVideoX + latent-input LDRM stack described in the paper
+2. **Complete training/inference scripts**: Exact scripts to reproduce the paper's results
+3. **Pretrained checkpoints**: Both the paper's setup and this repository's engineering variant
+
+### Questions & Feedback
+If you have questions about reproducibility or comparisons, please open an issue or contact the authors. We appreciate your understanding as we continue to improve and complete this codebase!
+
 ## 💡 Method Overview
 
 Diff4Splat introduces a novel framework for controllable 4D scene generation:
