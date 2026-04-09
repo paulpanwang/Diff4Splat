@@ -20,10 +20,9 @@ This is the official code repository for **Diff4Splat: Controllable 4D Scene Gen
 
 </h4>
 
-This repository contains the official implementation of the paper: [Diff4Splat: Controllable 4D Scene Generation with Latent Dynamic Reconstruction Models](https://arxiv.org/abs/2511.00503).
+
 Diff4Splat is a feed-forward method that synthesizes controllable and explicit 4D scenes from a single image. Our approach unifies the generative priors of video diffusion models with geometry and motion constraints learned from large-scale 4D datasets.
 
-Given a single input image, a camera trajectory, and an optional text prompt, Diff4Splat directly predicts a deformable 3D Gaussian field that encodes appearance, geometry, and motion, all in a single forward pass, without test-time optimization or post-hoc refinement.
 
 Here is our [Project Page](https://paulpanwang.github.io/Diff4Splat/).
 
