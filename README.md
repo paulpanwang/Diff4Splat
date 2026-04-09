@@ -39,6 +39,25 @@ You may also be interested in our other works:
 - **2025-10-15**: Initial codebase structure established.
 - **2025-10-01**: Project development started.
 
+
+
+## 📝 Paper vs Released Code
+
+This section clarifies the differences between the paper description and the current released codebase, to help set expectations for reproducibility.
+
+### What the Paper Describes
+- **Video Backbone**: CogVideoX-style Video DiT with 32-channel 3D Causal VAE (4×8×8 compression)
+- **LDRM Input**: Video latent tensor (z) from the diffusion model, together with camera information, processed by LDRM Transformer to output deformable 3D Gaussians
+- **Training**: Flow Matching on latent sequences jointly with photometric/geometric/motion objectives
+
+
+### Release Roadmap
+We are actively working on:
+1. **Paper-faithful implementation**: A version closer to the CogVideoX + latent-input LDRM stack described in the paper
+2. **Complete training/inference scripts**: Exact scripts to reproduce the paper's results
+3. **Pretrained checkpoints**: Both the paper's setup and this repository's engineering variant
+
+
 ## 📋 Project Status
 - [x] Inference code released
 - [x] Training code and data preprocessing scripts released
@@ -64,56 +83,6 @@ cd Diff4Splat
 pip install -r settings/requirements.txt
 ```
 
-The `settings/requirements.txt` includes:
-```
-plyfile
-ipython
-numpy==1.26.4
-matplotlib
-Pillow
-opencv-python
-imageio
-imageio-ffmpeg
-pytorch-msssim
-lpips
-einops
-safetensors
-accelerate
-transformers
-diffusers
-omegaconf
-h5py
-decord
-deepspeed
-flow_vis
-kiui
-```
-
-### Verify Installation
-
-```bash
-# Run environment test script
-python tests/test_environment.py
-```
-
-Or run a quick check:
-```bash
-python -c "
-import torch
-print('PyTorch:', torch.__version__)
-print('CUDA available:', torch.cuda.is_available())
-
-# Check key imports
-from src.options import opt_dict
-from src.models import Wan, LRDM
-# SplatRecon is available as a backward-compatible alias for LRDM
-from src.models import SplatRecon
-print('All imports successful!')
-"
-```
-
-
-
 ## 📊 Datasets
 
 Configure your dataset root path in `src/options.py` or via the `DATASET_ROOT` environment variable.
@@ -132,21 +101,6 @@ The following datasets are supported:
 Dataset paths can be configured in `src/options.py`:
 
 
-## 📝 Paper vs Released Code
-
-This section clarifies the differences between the paper description and the current released codebase, to help set expectations for reproducibility.
-
-### What the Paper Describes
-- **Video Backbone**: CogVideoX-style Video DiT with 32-channel 3D Causal VAE (4×8×8 compression)
-- **LDRM Input**: Video latent tensor (z) from the diffusion model, together with camera information, processed by LDRM Transformer to output deformable 3D Gaussians
-- **Training**: Flow Matching on latent sequences jointly with photometric/geometric/motion objectives
-
-
-### Release Roadmap
-We are actively working on:
-1. **Paper-faithful implementation**: A version closer to the CogVideoX + latent-input LDRM stack described in the paper
-2. **Complete training/inference scripts**: Exact scripts to reproduce the paper's results
-3. **Pretrained checkpoints**: Both the paper's setup and this repository's engineering variant
 
 ### Questions & Feedback
 If you have questions about reproducibility or comparisons, please open an issue or contact the authors. We appreciate your understanding as we continue to improve and complete this codebase!
