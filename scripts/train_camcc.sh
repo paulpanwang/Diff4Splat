@@ -1,1 +1,0 @@
-bash scripts/base_train.sh src/train_wan_cc.py  configs/train.yaml test

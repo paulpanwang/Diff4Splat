@@ -173,94 +173,9 @@ Dataset paths can be configured in `src/options.py`:
 
 ## 🚀 Quick Start
 
-### Step 1: Camera Control Video Generation
+### Inference with LRDM
 
-#### Training
-
-```bash
-# Single GPU training
-python src/train_wan_cc.py \
-    --config_file configs/train.yaml \
-    --tag wan_camera_control_test \
-    --output_dir ./out \
-    --max_train_steps 100 \
-    --max_val_steps 1
-```
-
-Or use the provided script:
-```bash
-bash scripts/train_camcc.sh
-```
-
-#### Configuration
-
-Edit `configs/train.yaml`:
-```yaml
-opt_type: "wan2.2_ti2v_5b"
-
-optimizer:
-  name: "adamw"
-  lr: 0.0004
-  betas: [0.9, 0.95]
-  weight_decay: 0.05
-
-lr_scheduler:
-  name: "cosine_warmup"
-  num_warmup_steps: 1000
-
-train:
-  batch_size_per_gpu: 8
-  gradient_accumulation_steps: 1
-  epochs: 10
-  ...
-
-val:
-  batch_size_per_gpu: 1
-```
-
-### Step 2: Latent Alignment Training
-
-This step trains a TinyVAE to align its latents with Wan VAE's latents (16-dim, 4x temporal, 8x spatial compression).
-
-**Training pipeline**:
-```
-Images -> WanVAE (fixed, no grad) -> Latent -> TinyVAE (trainable) -> Images -> LRDM (fixed)
-```
-
-A training script is provided at `src/train_latent_alignment.py`. First, ensure LRDM checkpoint is in `resources/ckpts/lrdm_ckpt.safetensors`.
-
-#### Training:
-```bash
-# Single GPU training
-python src/train_latent_alignment.py \
-    --config configs/latent_alignment.yaml \
-    --output_dir ./out/latent_alignment
-```
-
-Key components:
-- `src/models/latent_alignment.py` - Latent alignment models (LinearMapper, UNetMapper, TinyVAEDecoderWrapper)
-- `src/models/tiny_vae.py` - TinyVAE / TAEHV (Temporal Autoencoder)
-- `configs/latent_alignment.yaml` - Training configuration
-
-### Step 3: LRDM Inference
-
-LRDM code has been fully merged into the main `src/` directory.
-
-#### Run LRDM Inference (Novel View Synthesis)
-
-Use the enhanced inference script:
-```bash
-# Novel View Synthesis from NPZ data
-python src/infer_nvs.py \
-    --opt_type lrdm \
-    --pretrained_path ./resources/ckpts/lrdm_ckpt.safetensors \
-    --data_path /path/to/data.npz \
-    --output_dir ./out/nvs_results
-```
-
-The unified model is at `src/models/lrdm.py` with class `LRDM`. `SplatRecon` is available as a backward-compatible alias.
-
-### Step 4: Demo - 3DGS Reconstruction from Image and Camera Trajectory
+LRDM (Latent Reconstruction Dynamic Model) is provided for novel view synthesis and 3DGS reconstruction.
 
 #### Data Preprocessing
 ```bash
@@ -270,7 +185,7 @@ python src/preprocess_npz.py \
     --output_path ./data/preprocessed.npz
 ```
 
-#### 3DGS Reconstruction Demo
+#### 3DGS Reconstruction / Novel View Synthesis
 ```bash
 # Using LRDM for static scenes
 python src/infer_nvs.py \
@@ -286,6 +201,19 @@ python src/infer_nvs.py \
     --data_path ./data/preprocessed.npz \
     --output_dir ./out/dynamic_recon
 ```
+
+The unified model is at `src/models/lrdm.py` with class `LRDM`. `SplatRecon` is available as a backward-compatible alias.
+
+### Training Configuration
+
+Training configurations are provided in `configs/`:
+- `configs/train.yaml` - Camera control training config
+- `configs/latent_alignment.yaml` - Latent alignment training config
+
+Key model components:
+- `src/models/latent_alignment.py` - Latent alignment models
+- `src/models/tiny_vae.py` - TinyVAE / TAEHV (Temporal Autoencoder)
+- `src/models/lrdm.py` - LRDM model for 4D reconstruction
 
 ## 🧪 Running Tests
 
