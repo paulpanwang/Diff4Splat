@@ -131,66 +131,6 @@ The following datasets are supported:
 
 Dataset paths can be configured in `src/options.py`:
 
-## 🚀 Quick Start
-
-### Inference with LRDM
-
-LRDM (Latent Reconstruction Dynamic Model) is provided for novel view synthesis and 3DGS reconstruction.
-
-#### Data Preprocessing
-```bash
-# Preprocess your data into NPZ format
-python src/preprocess_npz.py \
-    --input_dir /path/to/images \
-    --output_path ./data/preprocessed.npz
-```
-
-#### 3DGS Reconstruction / Novel View Synthesis
-```bash
-# Using LRDM for static scenes
-python src/infer_nvs.py \
-    --opt_type lrdm_static \
-    --pretrained_path ./resources/ckpts/lrdm_ckpt.safetensors \
-    --data_path ./data/preprocessed.npz \
-    --output_dir ./out/reconstruction
-
-# Using LRDM for dynamic scenes
-python src/infer_nvs.py \
-    --opt_type lrdm \
-    --pretrained_path ./resources/ckpts/lrdm_ckpt.safetensors \
-    --data_path ./data/preprocessed.npz \
-    --output_dir ./out/dynamic_recon
-```
-
-The unified model is at `src/models/lrdm.py` with class `LRDM`. `SplatRecon` is available as a backward-compatible alias.
-
-### Training Configuration
-
-Training configurations are provided in `configs/`:
-- `configs/train.yaml` - Camera control training config
-- `configs/latent_alignment.yaml` - Latent alignment training config
-
-Key model components:
-- `src/models/latent_alignment.py` - Latent alignment models
-- `src/models/tiny_vae.py` - TinyVAE / TAEHV (Temporal Autoencoder)
-- `src/models/lrdm.py` - LRDM model for 4D reconstruction
-
-## 🧪 Running Tests
-
-We provide test scripts to verify your setup:
-
-```bash
-# Environment check
-python tests/test_environment.py
-
-# Wan model loading test
-python tests/test_wan_model.py
-
-# Latent alignment pipeline test
-python tests/test_latent_alignment.py
-```
-
-See [tests/README.md](tests/README.md) for more details.
 
 ## 📝 Paper vs Released Code
 
@@ -211,54 +151,9 @@ We are actively working on:
 ### Questions & Feedback
 If you have questions about reproducibility or comparisons, please open an issue or contact the authors. We appreciate your understanding as we continue to improve and complete this codebase!
 
-## 💡 Method Overview
 
-Diff4Splat introduces a novel framework for controllable 4D scene generation:
 
-### Core Components:
-1. **Video Latent Transformer**: Augments video diffusion models to jointly capture spatio-temporal dependencies
-2. **Deformable 3D Gaussian Field**: Encodes appearance, geometry, and motion in a unified representation
-3. **Single Forward Pass**: Generates high-quality 4D scenes in approximately 30 seconds
 
-### Key Features:
-- **Controllable Generation**: Supports camera trajectory and optional text prompts
-- **Explicit Representation**: Produces deformable 3D Gaussian primitives
-- **Efficient Inference**: No test-time optimization or post-hoc refinement required
-- **Multi-task Capability**: Supports video generation, novel view synthesis, and geometry extraction
-
-## 📈 Results & Evaluation
-
-Diff4Splat demonstrates state-of-the-art performance across multiple tasks:
-
-### Video Generation
-- Generates temporally consistent video sequences from single images
-- Supports controllable camera trajectories
-
-### Novel View Synthesis
-- Produces high-quality novel views from arbitrary camera positions
-- Maintains geometric consistency across viewpoints
-
-### Geometry Extraction
-- Extracts accurate 3D geometry from generated scenes
-- Enables downstream applications like mesh reconstruction
-
-## 🚀 Roadmap
-
-### Phase 1: Codebase Release (Current)
-- [x] Repository setup and documentation
-- [] Inference code release
-- [] Training scripts
-- [ ] Pretrained model weights
-
-### Phase 2: Full Implementation
-- [] Training code release
-- [] Dataset preprocessing scripts
-- [ ] Comprehensive evaluation benchmarks
-
-### Phase 3: Extended Features
-- [ ] Real-time inference optimization
-- [ ] Multi-modal conditioning support
-- [ ] Interactive demo applications
 
 ## 📚 Citation
 
