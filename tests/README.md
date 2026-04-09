@@ -1,5 +1,4 @@
 # Diff4Splat 测试脚本说明
-========================
 
 本目录包含 Diff4Splat 项目的测试脚本，方便快速验证环境和核心功能。
 
@@ -27,10 +26,9 @@ python tests/test_latent_alignment.py
 
 | 文件 | 功能 |
 |------|------|
-| `test_environment.py` | 验证 Python 环境、依赖包、checkpoints |
-| `test_wan_model.py` | 测试 Wan 模型加载 + checkpoint 对比 |
+| `test_environment.py` | 验证 Python 环境、依赖包 |
+| `test_wan_model.py` | 测试 Wan 模型加载 |
 | `test_latent_alignment.py` | 测试 WanVAE 和 TinyVAE 对齐 |
-| `test_aether.py` | Aether 相关测试 |
 
 ## 项目结构总览
 
@@ -40,9 +38,10 @@ Diff4Splat/
 │   ├── models/           # 模型定义
 │   ├── data/             # 数据加载
 │   └── utils/            # 工具函数
-├── diff3r_src/           # Diff3R 相关代码
 ├── tests/                # ← 测试脚本（本目录）
 ├── configs/              # 配置文件
-├── resources/            # 资源和 checkpoints
-└── scripts/              # 训练脚本
+├── resources/            # 资源和 checkpoints (gitignored)
+├── scripts/              # 训练脚本
+├── settings/             # 环境设置和依赖
+└── extensions/           # 第三方扩展
 ```
